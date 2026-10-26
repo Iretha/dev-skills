@@ -18,7 +18,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 | --- | --- | --- | --- |
 | `/arch` | `ARCH` | [architecture](skills/architecture/SKILL.md) | `/arch review Stage 2` |
 | `/plan` | `PLAN` | [implementation-planning](skills/implementation-planning/SKILL.md) | `/plan optimize Stage 3` |
-| `/spec` | `SPEC` | [task-specification](skills/task-specification/SKILL.md) | `/spec TASK-02-042` |
+| `/spec` | `SPEC` | [task-specification](skills/task-specification/SKILL.md) | `/spec review TASK-02-027-2` |
 | `/exec` | `EXEC` | [task-execution](skills/task-execution/SKILL.md) | `/exec explore TASK-02-025` |
 | `/review` | `REVIEW` | [code-review](skills/code-review/SKILL.md) | `/review initial TASK-02-025` |
 | `/analyze` | `ANALYZE` | [review-analysis](skills/review-analysis/SKILL.md) | `/analyze` (review report above) |
@@ -63,12 +63,14 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 **Use for:** Writing **one** implementation-ready TASK specification from an approved plan entry, with scope, contracts, acceptance criteria, risks, and verification expectations. Also use it to assess a draft TASK's readiness. **Not for** changing the overall plan or implementing the task.
 
-**Modes:** No formal named modes in the current skill. The requested operation determines the work:
+**Modes:**
 
-- **Specify:** `/spec TASK-02-042` — draft or update the specified TASK from its approved plan entry.
-- **Check readiness:** `/spec review TASK-02-042` — review completeness and material blockers; `review` here is a request description, **not a formal skill mode**.
+| Mode | When to use | Example |
+| --- | --- | --- |
+| `CREATE` (default) | Draft or refine one TASK specification from an approved plan entry; human approval before any repository change. | `/spec create TASK-02-042` or `/spec TASK-02-042` |
+| `REVIEW` | Read-only, conservative audit of an **existing** TASK against the approved plan, architecture, contracts and relevant evidence. Report material findings, minimal corrections and Explore questions; **do not edit files or change statuses**. | `/spec review TASK-02-027-2` |
 
-**Produces:** One TASK specification and readiness assessment (`READY`, `BLOCKED`, or `NEEDS EXPLORATION`). Writing to the repository requires explicit authorization.
+**Produces:** In CREATE, one proposed TASK specification and readiness assessment; in REVIEW, a concise, evidence-backed findings report with advisory readiness and no automatic rewrite. Repository writes require separate explicit authorization.
 
 ### 4. Coding-agent execution prompts — `/exec` / `EXEC`
 
@@ -142,7 +144,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 | --- | --- |
 | Define, challenge, evolve, or reconcile **system-wide architecture** | `/arch` |
 | Decide **which TASKs exist** and in what order | `/plan` |
-| Specify **what one TASK must deliver** | `/spec` |
+| Create or conservatively **review one TASK specification** | `/spec create` or `/spec review` |
 | Ask the coding agent to **explore, implement, or correct** | `/exec` |
 | Ask an independent reviewer to **review a branch** | `/review` |
 | Evaluate **findings returned by the reviewer** | `/analyze` |
