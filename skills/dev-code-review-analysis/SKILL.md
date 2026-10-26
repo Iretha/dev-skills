@@ -51,3 +51,5 @@ Then state:
 - **Readiness:** READY FOR HUMAN DECISION, NEEDS EVIDENCE, or BLOCKED BY CONTRACT DECISION.
 
 Never mark the TASK DONE or claim a reviewer verdict constitutes human acceptance.
+
+For a reply to an agent continuing in the same conversation, use `dev-agent-follow-up` to communicate only the approved decision/instruction delta; do not duplicate task context or infer phase authorization.
