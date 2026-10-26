@@ -5,6 +5,11 @@ description: Generate concise prompts for an independent, pragmatic, read-only r
 
 # Task Code Review Prompt
 
+## Pragmatic evolution rule
+
+- Evaluate whether new implementation complexity is proportional to approved requirements and realistic failure scenarios. Flag an abstraction or defensive layer only when its cost or risk is meaningful and a simpler contract-compliant alternative exists; cite concrete evidence.
+- Do not reopen accepted architecture merely because it could be simpler, demand speculative resilience or hypothetical-scale infrastructure, or suggest refactoring working code without a demonstrated issue. Preserve mandatory security, correctness, and data-integrity checks.
+
 ## Purpose
 
 Generate a copy-paste-ready prompt for a **separate review agent** to inspect an implemented task branch. Review for **correctness and meaningful risk, not perfection**. Report every substantiated issue that matters, but do not manufacture work.
