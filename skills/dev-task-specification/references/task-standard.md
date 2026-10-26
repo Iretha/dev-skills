@@ -1,5 +1,8 @@
 # Coding Agent Task Standard
 
+## Planning boundary
+Overall task decomposition, dependency graph, and execution order belong to dev-implementation-planning. Specification validates the selected approved task's boundaries; if material evidence requires splitting, merging, or changing dependencies, propose an amendment and await human approval. Do not silently replan.
+
 ## Atomicity
 One task = one primary independently observable deliverable. Multiple code files are acceptable when needed for one vertical behavior. Split when distinct outcomes can be built, reviewed, and verified separately. Do not split solely by technical layer if doing so creates nonfunctional fragments without a useful verification boundary. Avoid micro-tasks that increase explore and implementation overhead without reducing delivery risk. Prefer cohesive vertical slices when splitting would repeatedly reconstruct the same context. Split only for a meaningful independent deliverable, dependency, risk boundary, or verification benefit.
 
@@ -16,7 +19,7 @@ Routine EXPLORE, DECIDE, VERIFY, and CORRECT activities are phases of an impleme
 Each task must specify ID, type, status, problem, one deliverable, source of truth, prerequisites, in/out scope, relevant invariants, acceptance criteria, verification evidence, and stop conditions. Optional sections must be added when risk warrants: data migration, authorization, concurrency, idempotency, transaction boundary, failure behavior, side effects, monitoring, compatibility, rollback.
 
 ## Dependency and readiness
-A task is READY when its outcome, approved constraints, scope, and prerequisite path are clear enough for a safe read-only implementation explore. Implementation choices and explicitly labeled exploration questions may remain open. BLOCKED applies when a missing human-owned policy or conflicting binding contract prevents meaningful safe exploration or implementation approval. A greenfield task must not reference nonexistent infrastructure as if implemented. Distinguish `PLANNED`, `NEEDS EXPLORATION`, `BLOCKED`, `READY`, `DONE`. `DONE` requires human acceptance, not just an agent claim.
+Planning readiness (READY FOR SPECIFICATION) means an approved plan entry can be specified. Task-specification READY means the detailed TASK is ready for the coding agent's read-only EXPLORE; neither means implemented or accepted. Execution progress/status remains project-owned. A task is READY when its outcome, approved constraints, scope, and prerequisite path are clear enough for a safe read-only implementation explore. Implementation choices and explicitly labeled exploration questions may remain open. BLOCKED applies when a missing human-owned policy or conflicting binding contract prevents meaningful safe exploration or implementation approval. A greenfield task must not reference nonexistent infrastructure as if implemented. Distinguish `PLANNED`, `NEEDS EXPLORATION`, `BLOCKED`, `READY`, `DONE`. `DONE` requires human acceptance, not just an agent claim.
 
 ## Context efficiency
 State each binding contract once and refer to it rather than repeating it across sections. Provide a brief Implementation Explore Focus: relevant components supported by evidence, assumptions requiring validation, and open implementation questions. Do not prescribe an exhaustive file list or constrain investigation when new risks emerge.
