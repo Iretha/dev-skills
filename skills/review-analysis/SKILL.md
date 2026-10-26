@@ -3,7 +3,7 @@ name: review-analysis
 description: Evaluate an independent coding-agent review report against a task's approved contracts and concrete evidence. Classify meaningful findings, recommend human decisions, and prepare an approved correction scope without implementing code or generating a CORRECT prompt.
 ---
 
-# Dev Code Review Analysis
+# Code Review Analysis
 
 ## Purpose
 
