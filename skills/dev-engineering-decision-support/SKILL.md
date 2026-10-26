@@ -49,3 +49,5 @@ If evidence is unavailable, explicitly label conclusions as provisional. Do not 
 6. **Post-approval handoff:** only after approval, a short decision record and clarification for the existing agent session; not a complete execution prompt.
 
 The model proposes; the human decides.
+
+For a reply to an agent continuing in the same conversation, use `dev-agent-follow-up` to communicate only the approved decision/instruction delta; do not duplicate task context or infer phase authorization.
