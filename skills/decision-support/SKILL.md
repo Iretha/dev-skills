@@ -3,7 +3,7 @@ name: decision-support
 description: Analyze consequential engineering questions raised during task specification, coding-agent EXPLORE, implementation, or review. Verify existing contracts, compare meaningful options, and recommend a human-owned decision without composing agent messages. Do not implement or silently change approved architecture.
 ---
 
-# Dev Engineering Decision Support
+# Engineering Decision Support
 
 ## Purpose
 
