@@ -1,6 +1,6 @@
 ---
 name: decision-support
-description: Analyze consequential engineering questions raised during task specification, coding-agent EXPLORE, implementation, or review. Verify existing contracts, compare meaningful options, and recommend a human-owned decision with a concise agent handoff. Do not implement or silently change approved architecture.
+description: Analyze consequential engineering questions raised during task specification, coding-agent EXPLORE, implementation, or review. Verify existing contracts, compare meaningful options, and recommend a human-owned decision without composing agent messages. Do not implement or silently change approved architecture.
 ---
 
 # Dev Engineering Decision Support
@@ -27,7 +27,7 @@ If evidence is unavailable, explicitly label conclusions as provisional. Do not 
 4. **Compare meaningful options.** Include the simplest compliant approach and only credible alternatives. Evaluate correctness, contract compatibility, complexity, maintainability, integration effort, verification burden, and material security/data/concurrency/operational risks as relevant. Do not force a fixed number of options or speculative future-proofing.
 5. **Recommend with evidence.** Give a preferred option, its rationale, trade-offs, and consequences for current scope, contracts, tests, or dependencies. Distinguish verified evidence from inference. Identify only information whose absence could change the decision.
 6. **Human checkpoint.** Ask for the precise approval needed. Do not treat a recommendation as approval, alter contracts/specifications, authorize implementation, or instruct the agent to continue before the human decides.
-7. **After explicit approval, hand off concisely.** Record the exact chosen decision, its rationale where material, affected authoritative documents needing updates, and the minimal self-contained clarification to relay to the existing coding-agent conversation. If a binding contract/spec must change, request authorization to update it before implementation. The execution-prompt skill owns phase-specific EXPLORE/IMPLEMENT/CORRECT prompts.
+7. **After explicit approval, record the decision.** Capture the chosen option, material rationale, and affected authoritative documents. If a binding contract/spec must change, request authorization to update it before implementation. Use `agent-follow-up` for any message to an agent continuing in the same conversation; `task-execution` owns new phase-specific EXPLORE/IMPLEMENT/CORRECT prompts. Do not compose those messages here.
 
 ## Boundaries and efficiency
 
@@ -46,7 +46,7 @@ If evidence is unavailable, explicitly label conclusions as provisional. Do not 
 3. **Options and trade-offs:** concise comparison of credible choices.
 4. **Recommendation:** preferred option and why, including consequences and verification implications.
 5. **Human approval:** exact choice needed; mark PENDING until explicitly approved.
-6. **Post-approval handoff:** only after approval, a short decision record and clarification for the existing agent session; not a complete execution prompt.
+6. **Post-approval record:** only after approval, the chosen decision and affected contracts; no agent-facing prompt or follow-up message.
 
 The model proposes; the human decides.
 
