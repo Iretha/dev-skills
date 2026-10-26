@@ -3,7 +3,7 @@ name: task-specification
 description: Specify one task from an approved implementation plan as an evidence-based, implementation-ready coding-agent contract. Use for task specification and quality review; overall decomposition and dependency planning belong to implementation-planning. Framework-agnostic.
 ---
 
-# Dev Task Specification
+# Task Specification
 
 ## Purpose
 Turn **one approved plan entry** into a detailed coding-agent TASK specification with a cohesive, verifiable outcome. The planning skill owns milestone decomposition, ordering, and dependencies. **This skill specifies work; it does not implement it or silently replan.**
