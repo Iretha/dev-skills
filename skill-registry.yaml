@@ -13,7 +13,7 @@ skills:
   - id: task-specification
     alias: /spec
     path: skills/task-specification/SKILL.md
-    modes: []
+    modes: [CREATE, REVIEW]
   - id: task-execution
     alias: /exec
     path: skills/task-execution/SKILL.md
