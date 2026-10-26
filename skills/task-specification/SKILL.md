@@ -10,6 +10,11 @@ description: Specify one task from an approved implementation plan as an evidenc
 - **CREATE** (default): prepare or refine one task specification from an approved plan entry, with the existing human approval gate.
 - **REVIEW**: perform a **read-only, conservative audit of an existing task specification**. Compare it with the approved plan, canonical architecture/contracts, relevant existing task specifications and repository evidence. Report only substantiated contradictions, missing binding requirements, ambiguous acceptance criteria, unsafe scope/dependency assumptions, and consequential Explore questions. Classify each finding by severity, cite the precise evidence, explain impact and propose the smallest correction. Distinguish confirmed defects from questions requiring the coding agent's Explore. Do **not** rewrite the specification, change plan/architecture, mark READY, or modify repository files without separate explicit human approval. When there are no material findings, say so. REVIEW outputs a concise findings/readiness report rather than a replacement TASK file.
 
+## Pragmatic evolution rule
+
+- Specify the minimum sufficient solution for current approved needs and realistic risks; preserve mandatory correctness, data-integrity and security guarantees. Do not turn possible future scale, extensibility, or hypothetical failure combinations into binding requirements without a concrete reason and human decision.
+- When meaningful complexity is proposed, distinguish essential guarantees from deferrable enhancements and identify the simpler compliant alternative. Do not demand refactoring of accepted working components without evidence of a present problem.
+
 ## Purpose
 Turn **one approved plan entry** into a detailed coding-agent TASK specification with a cohesive, verifiable outcome. The planning skill owns milestone decomposition, ordering, and dependencies. **This skill specifies work; it does not implement it or silently replan.**
 
