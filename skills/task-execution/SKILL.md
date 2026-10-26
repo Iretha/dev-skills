@@ -40,6 +40,10 @@ Do not search the whole repository just to compose a prompt. If the exact TASK l
 14. **Base drift check.** At IMPLEMENT start or safe resumption, check relevant changes since EXPLORE/last approval. Reinspect only affected areas. Adapt routine implementation details within the approved scope and risk envelope; stop for renewed human approval if changes materially affect approach, scope, contracts, security/data/concurrency guarantees, or risk. Do not restart exploration by default.
 15. **No speculative scaffolding.** Do not add AGENTS.md, frameworks, helper documents, or extra workflow files solely to save prompt tokens.
 
+16. **Compaction continuity.** After context compaction, reuse verified findings, decisions and test evidence; recover only missing, uncertain or changed facts. Do not restart exploration solely because history was summarized.
+17. **Session strategy.** Continue in the existing session while its relevant context is reliable. If irrelevant history dominates or context is no longer dependable, use a fresh session with a minimal handoff. Include TASK, phase/approval, branch and commit, decisions, completed and remaining work, tests/results and blockers. No fixed token threshold; no new authorization implied.
+18. **Communication budget.** Send interim updates only for meaningful milestones, blockers or human decisions. Avoid narrating routine reads and successful tool calls. End each phase with concise, auditable verification evidence; never omit failures or mandatory checks.
+
 ## Phase selection
 
 ### EXPLORE — default
