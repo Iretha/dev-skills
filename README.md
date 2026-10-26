@@ -128,7 +128,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 - `/decide` — analyze the agent's latest blocker from the conversation.
 - `/decide should this retry reuse the existing claim policy?` — analyze one precise engineering trade-off.
 
-**Produces:** Evidence, options, recommendation, and a precise human decision request. After approval, use `/followup` for the minimal reply to the agent.
+**Produces:** Evidence, options, recommendation, and a precise human decision request. It records approved decisions but does not compose agent messages. After approval, use `/followup` for the minimal reply to the agent.
 
 ## Which skill should I use?
 
@@ -149,7 +149,7 @@ Requirements and constraints → `/arch design` → **human architecture approva
 
 The workflow is illustrative, not a mandatory call to every skill for every task. Choose the **narrowest** relevant skill; avoid repeating already-completed analysis. Architecture owns system-level guarantees; planning owns task decomposition; specification owns one task contract; decision support owns narrow blockers; review analysis owns finding disposition; follow-up owns message composition only.
 
-**Authorization is explicit.** A recommendation is not approval; a skill invocation is not permission to modify a repository, advance execution phases, push, merge, or mark a task DONE. Follow repository-specific instructions (including applicable `AGENTS.md`) and preserve independent review and mandatory verification.
+**Authorization is explicit.** A recommendation is not approval; a skill invocation is not permission to modify a repository, advance execution phases, push, merge, or mark a task DONE. Coding agents never create or update pull requests: they push only their authorized task branches, and the human owns PR creation and merging. Follow repository-specific instructions (including applicable `AGENTS.md`) and preserve independent review and mandatory verification.
 
 ## Repository and naming notes
 
