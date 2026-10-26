@@ -4,8 +4,8 @@ For each proposed task answer PASS / FAIL / N/A with a short reason.
 
 1. **Evidence:** Are repository claims grounded in inspection? For greenfield, is absence of scaffold/database explicitly recognized?
 2. **Problem:** Is the desired outcome stated independently of a preferred implementation?
-3. **Atomicity:** Is there one cohesive deliverable and a bounded change? Would splitting create repeated context reconstruction without a meaningful independent benefit?
-4. **Dependencies:** Do all prerequisites exist or appear earlier in the task map?
+3. **Atomicity:** Does the approved task remain cohesive, bounded, independently verifiable, and reviewable? Escalate material boundary defects to Planning/human approval.
+4. **Dependencies:** Do prerequisites match the approved plan and exist or have a credible prerequisite path? Escalate material changes to the plan instead of replanning silently.
 5. **Decisions:** Are binding business, architecture, and security choices human-approved rather than invented? Are unresolved implementation choices clearly delegated to explore?
 6. **Boundaries:** Are allowed changes, forbidden changes, and relevant interfaces explicit?
 7. **Invariants:** Are lifecycle, data, authorization, transaction and failure invariants recorded where relevant?
