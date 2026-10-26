@@ -151,6 +151,13 @@ The workflow is illustrative, not a mandatory call to every skill for every task
 
 **Authorization is explicit.** A recommendation is not approval; a skill invocation is not permission to modify a repository, advance execution phases, push, merge, or mark a task DONE. Coding agents never create or update pull requests: they push only their authorized task branches, and the human owns PR creation and merging. Follow repository-specific instructions (including applicable `AGENTS.md`) and preserve independent review and mandatory verification.
 
+## Context and token efficiency
+
+- Preserve verified findings and approved decisions after context compaction; reread only missing, uncertain, or changed facts.
+- Continue in the same agent session while its relevant context remains reliable. Otherwise, use a minimal handoff to a fresh session without implying new authorization.
+- Limit interim messages to meaningful milestones, blockers, and decision requests. Keep final verification reports concise and auditable.
+- Never sacrifice mandatory verification, safety checks, or human approval to reduce token usage.
+
 ## Repository and naming notes
 
 The linked names above are the **current directory names and YAML skill identifiers**. The former `dev-*` names have been replaced; update external consumers deliberately, including any project-local links or copied skills.

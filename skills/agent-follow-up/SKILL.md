@@ -29,6 +29,10 @@ If the agent is starting a **new session** or context has been lost, do not use 
 6. **Stop conditions.** Escalate only a new material conflict, changed requirement, unsafe operation, or blocking evidence; do not require a fresh human decision for routine technical details within approved scope.
 7. **Keep it short.** Usually 2–8 sentences or a few compact bullets. No boilerplate greeting, restated plan, duplicated contract, or generic checklist. Write in the agent's working language unless the human requests otherwise.
 
+## Context continuity
+
+After context compaction, reuse verified decisions and recover only missing or uncertain details rather than restarting the investigation. Continue in the existing session while relevant context remains reliable. If the context is lost or mostly irrelevant, use a concise new-session handoff through the task-execution workflow; a handoff never grants additional approval.
+
 ## Output
 
 Return **only the copy-ready follow-up message** when the human asks for a prompt, unless a material ambiguity must first be resolved. Explicitly distinguish a decision from a phase authorization when both are present. Do not create files, commits, or change task status.
