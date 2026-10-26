@@ -3,7 +3,7 @@ name: architecture
 description: Collaboratively design, review, evolve, and check consistency of software architecture from requirements, constraints, approved decisions, and repository evidence. Supports DESIGN, REVIEW, EVOLVE, and CONSISTENCY modes with human-owned decisions and risk-proportionate investigation.
 ---
 
-# Dev Software Architecture
+# Software Architecture
 
 ## Purpose and boundary
 
