@@ -3,7 +3,7 @@ name: implementation-planning
 description: Create or optimize a dependency-ordered software implementation plan from approved requirements and architecture. Minimize unnecessary agent cycles and repeated context reconstruction without sacrificing code quality, testability, risk isolation, or human decision ownership. Supports CREATE and OPTIMIZE modes.
 ---
 
-# Dev Implementation Planning
+# Implementation Planning
 
 ## Purpose
 
