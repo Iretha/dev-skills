@@ -35,7 +35,7 @@ If evidence is unavailable, explicitly label conclusions as provisional. Do not 
 - Keep human-owned business semantics, security policy, architectural direction, risk acceptance, and MVP scope explicit. Never silently choose these.
 - Do not manufacture a decision point when the agent already has discretion under approved contracts.
 - Do not broaden task scope or propose refactoring without a concrete blocker or demonstrable risk.
-- If a review finding is being assessed for validity or disposition, use `dev-code-review-analysis`; use this skill only for the distinct human-owned engineering decision exposed by that finding.
+- If a review finding is being assessed for validity or disposition, use `dev-code-review-analysis`; only after the finding exposes a real human-owned decision, compare engineering alternatives here. Do not reassess the finding or repeat its evidence review.
 - If the task boundary or dependency graph must change, propose an amendment for human approval and refer to `dev-implementation-planning`; do not replan here.
 - Stop when the decision is sufficiently supported; do not chase hypothetical alternatives or seek numerical scores without measured data.
 
