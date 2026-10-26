@@ -18,7 +18,7 @@
 
 ## Optimization proposals
 
-<OPTIMIZE: minimal changes to existing plan, with merge/split/dependency rationale, benefit, risk, and impact on IDs. CREATE: only non-obvious boundary decisions.>
+<OPTIMIZE: classify existing tasks as DONE, specified/started, or unspecced/unstarted (uncertain = protected). Focus proposals on unspecced/unstarted work. Preserve DONE tasks; list any exceptional change to specified/started tasks separately with concrete material risk, affected IDs/specs/dependencies, and explicit human approval required. CREATE: only non-obvious boundary decisions.>
 
 ## Deferred / out of scope
 
