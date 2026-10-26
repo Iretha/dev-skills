@@ -1,0 +1,36 @@
+# Machine-readable skill catalog. README.md remains the human-facing guide.
+# Slash aliases are conversational conventions, not installed commands.
+version: 1
+skills:
+  - id: architecture
+    alias: /arch
+    path: skills/architecture/SKILL.md
+    modes: [DESIGN, REVIEW, EVOLVE, CONSISTENCY]
+  - id: implementation-planning
+    alias: /plan
+    path: skills/implementation-planning/SKILL.md
+    modes: [CREATE, OPTIMIZE]
+  - id: task-specification
+    alias: /spec
+    path: skills/task-specification/SKILL.md
+    modes: []
+  - id: task-execution
+    alias: /exec
+    path: skills/task-execution/SKILL.md
+    modes: [EXPLORE, IMPLEMENT, CORRECT]
+  - id: code-review
+    alias: /review
+    path: skills/code-review/SKILL.md
+    modes: [INITIAL, RE-REVIEW]
+  - id: review-analysis
+    alias: /analyze
+    path: skills/review-analysis/SKILL.md
+    modes: []
+  - id: agent-follow-up
+    alias: /followup
+    path: skills/agent-follow-up/SKILL.md
+    modes: []
+  - id: decision-support
+    alias: /decide
+    path: skills/decision-support/SKILL.md
+    modes: []
