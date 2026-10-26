@@ -70,3 +70,5 @@ For each prior finding state resolved/unresolved with evidence. Report any newly
 
 Report verification performed and verdict: Changes required / Ready for human acceptance / Unable to verify. Human acceptance remains separate. STOP.
 ```
+
+For a reply to an agent continuing in the same conversation, use `dev-agent-follow-up` to communicate only the approved decision/instruction delta; do not duplicate task context or infer phase authorization.
