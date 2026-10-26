@@ -6,6 +6,17 @@ One task delivers one **cohesive, independently verifiable outcome**. A task may
 
 Correctness, risk isolation, and reviewability take precedence over token savings. Sharing components or context does not alone justify combining tasks with different failure modes or an unreviewable diff.
 
+## Preserve Existing Investment (OPTIMIZE)
+
+Classify existing tasks from authoritative plan/specification/branch evidence before proposing changes:
+
+- **DONE:** immutable for optimization; do not merge, split, rename, remove, or rewrite completed task history. New work to correct a discovered defect is a separately approved change.
+- **Specified or started, not DONE:** protect the existing task ID, specification, boundaries, dependencies, and prior decisions. Do not casually merge, split, renumber, or rewrite them. Only propose a targeted exception for a demonstrated material correctness, dependency, or delivery risk; explain downstream impact and obtain explicit human approval before edits.
+- **Unspecified and unstarted:** primary candidates for boundary, ordering, and dependency optimization, subject to approved contracts and human plan approval.
+- **Uncertain state:** treat as protected until verified; do not infer that not-DONE means unspecced.
+
+Optimize the remaining work around protected tasks rather than retroactively redesigning already specified or implemented work. Prefer additive future tasks or narrow amendments over destructive history edits when remediation is necessary.
+
 ## Five mandatory challenges
 
 1. **Merge:** Would combining related tasks eliminate repeated context reconstruction, integration seams, or agent cycles without materially increasing risk or losing independent verification? If yes, propose merging.
@@ -24,7 +35,7 @@ Correctness, risk isolation, and reviewability take precedence over token saving
 - Place high-risk uncertainty early enough to avoid expensive rework, but do not implement unresolved policy.
 - Qualitative risk: LOW / MEDIUM / HIGH, with a concrete reason; avoid arbitrary numeric complexity scores.
 - Cost optimization is multi-objective: repeated context, implementation effort, test/review overhead, integration risk, and expected correction cycles. Do not optimize only task count.
-- Keep stable task IDs; in OPTIMIZE mode, do not silently reassign IDs, change DONE tasks, or break existing references.
+- Keep stable task IDs and apply Preserve Existing Investment before considering any OPTIMIZE proposal; avoid breaking existing references.
 
 ## Ownership and handoff
 
