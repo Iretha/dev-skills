@@ -3,7 +3,7 @@ name: code-review
 description: Generate concise prompts for an independent, pragmatic, read-only review of a completed coding task branch against main, its specification, contracts, and project conventions. Supports focused re-review after corrections.
 ---
 
-# Dev Task Code Review Prompt
+# Task Code Review Prompt
 
 ## Purpose
 
