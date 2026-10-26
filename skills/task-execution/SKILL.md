@@ -5,6 +5,11 @@ description: Generate concise, phase-specific prompts for coding agents executin
 
 # Task Execution Prompt
 
+## Pragmatic evolution rule
+
+- Optimize for the simplest solution satisfying **present approved contracts**, realistic failures, and mandatory correctness/security guarantees; defer infrastructure for speculative future scale or extensibility.
+- EXPLORE must explicitly separate essential behavior from deferrable enhancements and justify substantial new mechanisms by a concrete current need, cost, and simpler compliant alternative. IMPLEMENT must not add unapproved protective layers or abstractions. Do not initiate simplification refactors of accepted code without evidence of a concrete problem and human approval.
+
 ## Purpose
 
 Produce a **copy-paste-ready, token-efficient prompt** for a coding agent working from an existing TASK specification. The TASK is the authoritative description of requirements, scope, acceptance criteria, and verification. **Do not restate it.**
