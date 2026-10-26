@@ -21,4 +21,4 @@ Approved requirements and architecture → implementation plan → task specific
 
 Planning owns overall task decomposition and dependencies. Specification owns detailed requirements for a single task and flags boundary problems without silently replanning. Execution and review remain separate; no skill may approve its own work.
 
-The three original skills were initially copied from [java-dev-to-ai-systems-engineer](https://github.com/Iretha/java-dev-to-ai-systems-engineer) and verified byte-for-byte at migration time; the copies in this repository have since evolved. Keep existing consumers pointed at the old paths until their references are updated to this repository.
+This repository is the maintained source of truth for these development skills. Historical copies in other repositories may be outdated; update consumers deliberately when changing their references.
