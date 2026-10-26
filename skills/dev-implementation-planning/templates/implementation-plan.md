@@ -7,9 +7,9 @@
 
 ## Task map
 
-| ID | Deliverable (one observable outcome) | Depends on | Risk + reason | Boundary / verification rationale | Status |
+| ID | Deliverable | Depends on | Scope boundary + contract refs | Risk focus | Verification boundary | Execution status |
 |---|---|---|---|---|---|
-| TASK-XXX | ... | — | MEDIUM — ... | ... | PLANNED |
+| TASK-XXX | ... | — | ... | MEDIUM — ... | ... | PLANNED |
 
 ## Planning decisions
 
@@ -26,7 +26,7 @@
 
 ## Readiness and approval
 
-- READY for task specification:
+- READY FOR SPECIFICATION (planning readiness only; not TASK READY for Codex):
 - NEEDS EXPLORATION:
 - BLOCKED:
 - **Human plan approval:** PENDING | APPROVED
