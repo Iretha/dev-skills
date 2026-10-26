@@ -8,16 +8,16 @@ Reusable skills for AI-assisted software engineering.
 
 In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (or by the uppercase code without a slash). These are **documented conversational shortcuts, not registered ChatGPT slash commands**: they do not install or automatically load a skill. The assistant should resolve the alias to the linked `SKILL.md` and follow it; if the skill cannot be accessed, it should say so rather than claim it was applied.
 
-| Shortcut | Code | Skill (current repository path) | Typical request |
+| Shortcut | Code | Skill | Typical request |
 | --- | --- | --- | --- |
-| `/arch` | `ARCH` | [dev-software-architecture](skills/dev-software-architecture/SKILL.md) | `/arch review Stage 2` |
-| `/plan` | `PLAN` | [dev-implementation-planning](skills/dev-implementation-planning/SKILL.md) | `/plan optimize Stage 3` |
-| `/spec` | `SPEC` | [dev-task-specification](skills/dev-task-specification/SKILL.md) | `/spec TASK-02-042` |
-| `/exec` | `EXEC` | [dev-task-execution-prompt](skills/dev-task-execution-prompt/SKILL.md) | `/exec explore TASK-02-025` |
-| `/review` | `REVIEW` | [dev-task-code-review-prompt](skills/dev-task-code-review-prompt/SKILL.md) | `/review initial TASK-02-025` |
-| `/analyze` | `ANALYZE` | [dev-code-review-analysis](skills/dev-code-review-analysis/SKILL.md) | `/analyze` (review report above) |
-| `/followup` | `FOLLOWUP` | [dev-agent-follow-up](skills/dev-agent-follow-up/SKILL.md) | `/followup` (approved decisions above) |
-| `/decide` | `DECIDE` | [dev-engineering-decision-support](skills/dev-engineering-decision-support/SKILL.md) | `/decide` (agent blocker above) |
+| `/arch` | `ARCH` | [architecture](skills/architecture/SKILL.md) | `/arch review Stage 2` |
+| `/plan` | `PLAN` | [implementation-planning](skills/implementation-planning/SKILL.md) | `/plan optimize Stage 3` |
+| `/spec` | `SPEC` | [task-specification](skills/task-specification/SKILL.md) | `/spec TASK-02-042` |
+| `/exec` | `EXEC` | [task-execution](skills/task-execution/SKILL.md) | `/exec explore TASK-02-025` |
+| `/review` | `REVIEW` | [code-review](skills/code-review/SKILL.md) | `/review initial TASK-02-025` |
+| `/analyze` | `ANALYZE` | [review-analysis](skills/review-analysis/SKILL.md) | `/analyze` (review report above) |
+| `/followup` | `FOLLOWUP` | [agent-follow-up](skills/agent-follow-up/SKILL.md) | `/followup` (approved decisions above) |
+| `/decide` | `DECIDE` | [decision-support](skills/decision-support/SKILL.md) | `/decide` (agent blocker above) |
 
 **Syntax:** `/<shortcut> [mode] [target or instruction]`, or `CODE [MODE] [target or instruction]`. Mode names are case-insensitive. Omit a mode when the intended action is clear or the skill defines a default; omit a TASK ID when the current conversation already identifies it. A shortcut is a request to use a skill, **not** authorization to edit repositories, implement code, advance a phase, push, merge, or mark work accepted.
 
@@ -25,7 +25,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 1. Architecture — `/arch` / `ARCH`
 
-**Skill:** [dev-software-architecture](skills/dev-software-architecture/SKILL.md)
+**Skill:** [architecture](skills/architecture/SKILL.md)
 
 **Use for:** Designing or challenging system-level architecture: component boundaries, data ownership, APIs, lifecycle, failures, concurrency, security, operational guarantees, and consistency with approved requirements. The human decides architectural trade-offs. **Not for** splitting work into TASKs or resolving a narrow implementation blocker that already has an approved architecture.
 
@@ -40,7 +40,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 2. Implementation planning — `/plan` / `PLAN`
 
-**Skill:** [dev-implementation-planning](skills/dev-implementation-planning/SKILL.md)
+**Skill:** [implementation-planning](skills/implementation-planning/SKILL.md)
 
 **Use for:** Turning approved architecture and requirements into an ordered implementation plan with cohesive tasks, genuine dependencies, risk boundaries, and verification scope. **Not for** detailed TASK specifications or coding.
 
@@ -53,7 +53,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 3. Task specification — `/spec` / `SPEC`
 
-**Skill:** [dev-task-specification](skills/dev-task-specification/SKILL.md)
+**Skill:** [task-specification](skills/task-specification/SKILL.md)
 
 **Use for:** Writing **one** implementation-ready TASK specification from an approved plan entry, with scope, contracts, acceptance criteria, risks, and verification expectations. Also use it to assess a draft TASK's readiness. **Not for** changing the overall plan or implementing the task.
 
@@ -66,7 +66,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 4. Coding-agent execution prompts — `/exec` / `EXEC`
 
-**Skill:** [dev-task-execution-prompt](skills/dev-task-execution-prompt/SKILL.md)
+**Skill:** [task-execution](skills/task-execution/SKILL.md)
 
 **Use for:** Creating **copy-ready prompts** for a coding agent working from an existing TASK specification. This skill writes prompts; it does **not** implement code.
 
@@ -80,7 +80,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 5. Independent code-review prompts — `/review` / `REVIEW`
 
-**Skill:** [dev-task-code-review-prompt](skills/dev-task-code-review-prompt/SKILL.md)
+**Skill:** [code-review](skills/code-review/SKILL.md)
 
 **Use for:** Generating prompts for a **separate, read-only review agent** to assess an implemented branch against its TASK, approved contracts, and actual diff. **Not for** assessing the review report after the reviewer returns; use `/analyze` then.
 
@@ -93,7 +93,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 6. Review findings analysis — `/analyze` / `ANALYZE`
 
-**Skill:** [dev-code-review-analysis](skills/dev-code-review-analysis/SKILL.md)
+**Skill:** [review-analysis](skills/review-analysis/SKILL.md)
 
 **Use for:** Evaluating an independent review report: verify material findings against evidence, separate real defects from unsupported claims, propose dispositions, and group an efficient correction package. **Not for** independently reviewing an entire branch or generating the CORRECT prompt.
 
@@ -106,7 +106,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 7. Agent follow-up — `/followup` / `FOLLOWUP`
 
-**Skill:** [dev-agent-follow-up](skills/dev-agent-follow-up/SKILL.md)
+**Skill:** [agent-follow-up](skills/agent-follow-up/SKILL.md)
 
 **Use for:** A **short message back to an agent in the same conversation** after decisions or clarifications have already been made. Avoids copying TASK context, past findings, and approved contracts. **Not for** making the underlying decision or preparing a new-session handoff.
 
@@ -119,7 +119,7 @@ In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (
 
 ### 8. Engineering decision support — `/decide` / `DECIDE`
 
-**Skill:** [dev-engineering-decision-support](skills/dev-engineering-decision-support/SKILL.md)
+**Skill:** [decision-support](skills/decision-support/SKILL.md)
 
 **Use for:** A **specific consequential blocker** raised during specification, EXPLORE, implementation, or review. Check approved contracts, test whether the question truly requires human approval, compare credible alternatives, and recommend a decision. **Not for** broad architectural redesign or a fresh implementation plan.
 
@@ -153,6 +153,6 @@ The workflow is illustrative, not a mandatory call to every skill for every task
 
 ## Repository and naming notes
 
-The linked `dev-*` names above are the **current actual directory names and YAML skill identifiers**. The short names (`architecture`, `implementation-planning`, `task-specification`, `task-execution`, `code-review`, `review-analysis`, `agent-follow-up`, `decision-support`) are **proposed future rename targets**, not paths that already exist. Do not rewrite links or consumers to those names until a separate, approved rename migration is completed.
+The linked names above are the **current directory names and YAML skill identifiers**. The former `dev-*` names have been replaced; update external consumers deliberately, including any project-local links or copied skills.
 
 This repository is the maintained source of truth. Copies in other repositories can become outdated; update consumers deliberately and check internal/external references when renaming skills.
