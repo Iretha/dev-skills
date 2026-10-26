@@ -5,6 +5,11 @@ description: Specify one task from an approved implementation plan as an evidenc
 
 # Task Specification
 
+## Modes
+
+- **CREATE** (default): prepare or refine one task specification from an approved plan entry, with the existing human approval gate.
+- **REVIEW**: perform a **read-only, conservative audit of an existing task specification**. Compare it with the approved plan, canonical architecture/contracts, relevant existing task specifications and repository evidence. Report only substantiated contradictions, missing binding requirements, ambiguous acceptance criteria, unsafe scope/dependency assumptions, and consequential Explore questions. Classify each finding by severity, cite the precise evidence, explain impact and propose the smallest correction. Distinguish confirmed defects from questions requiring the coding agent's Explore. Do **not** rewrite the specification, change plan/architecture, mark READY, or modify repository files without separate explicit human approval. When there are no material findings, say so. REVIEW outputs a concise findings/readiness report rather than a replacement TASK file.
+
 ## Purpose
 Turn **one approved plan entry** into a detailed coding-agent TASK specification with a cohesive, verifiable outcome. The planning skill owns milestone decomposition, ordering, and dependencies. **This skill specifies work; it does not implement it or silently replan.**
 
@@ -13,6 +18,9 @@ Turn **one approved plan entry** into a detailed coding-agent TASK specification
 Read [task-standard](references/task-standard.md), [quality-gates](references/quality-gates.md), and [task-template](templates/dev-task.md). Consult the existing project's conventions and authoritative specifications. Follow applicable project-local workflow instructions (including AGENTS.md when present); do not assume files from another repository exist.
 
 ## Workflow
+
+For **REVIEW**, apply steps 1–5 and 7 to the existing specification, then present the evidence-backed findings and minimal suggested edits for human decision; do not perform step 6 or write a file. The readiness conclusion is advisory and does not change task status.
+
 
 1. **Establish approved plan entry and source of truth.** Read the task ID, deliverable, dependencies, scope boundary, contract references, risk focus, and verification boundary from the approved plan. Record existing decisions, constraints, and unknowns; do not independently replan the milestone. Distinguish confirmed facts, evidence-based inferences, and proposals.
 2. **Explore only enough to specify accurately.** For brownfield work, inspect relevant repository code, tests, migrations, architecture, docs, and callers *read-only* where needed to validate contracts and acceptance criteria. Do not repeat planning's broad decomposition or preempt the coding agent's detailed implementation Explore. For greenfield work, verify repository state, project structure, decisions, and prerequisite tooling instead of assuming a scaffold exists. If repository access is unavailable, mark findings unverified and prepare a bounded exploration task.
@@ -38,7 +46,7 @@ Read [task-standard](references/task-standard.md), [quality-gates](references/qu
 ## Outputs
 1. **Plan reference:** approved task ID, dependencies, scope boundary, and authoritative contract links (without copying the plan).
 2. **Decision log:** confirmed decisions, open questions, rejected assumptions.
-3. **Task specification:** one Markdown file for the selected task, using the template.
+3. **Task specification:** in CREATE, one Markdown file using the template; in REVIEW, a concise severity-ranked review report with evidence, impact, smallest proposed corrections, and no automatic file edits.
 4. **Specification readiness:** whether this TASK is READY for coding-agent EXPLORE, BLOCKED, or NEEDS EXPLORATION and why; do not confuse it with planning readiness or execution status.
 
 Do not automatically generate all future task files when the user is still resolving architecture. Prefer incremental specification and review.
