@@ -129,3 +129,5 @@ Use the existing TASK branch; commit verified corrections and push only that bra
 
 Report branch, pushed commit SHA, compare URL and verification evidence. Do not change task specifications or execution statuses. STOP for human re-review.
 ```
+
+For a reply to an agent continuing in the same conversation, use `dev-agent-follow-up` to communicate only the approved decision/instruction delta; do not duplicate task context or infer phase authorization.
