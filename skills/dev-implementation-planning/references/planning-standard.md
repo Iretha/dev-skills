@@ -4,6 +4,8 @@
 
 One task delivers one **cohesive, independently verifiable outcome**. A task may change entities, migrations, repositories, services, APIs, and tests together when they jointly deliver that outcome. Do not split by technical layer by default. Avoid tasks so large that failures cannot be localized, reviewed, or safely corrected.
 
+Correctness, risk isolation, and reviewability take precedence over token savings. Sharing components or context does not alone justify combining tasks with different failure modes or an unreviewable diff.
+
 ## Five mandatory challenges
 
 1. **Merge:** Would combining related tasks eliminate repeated context reconstruction, integration seams, or agent cycles without materially increasing risk or losing independent verification? If yes, propose merging.
@@ -25,5 +27,7 @@ One task delivers one **cohesive, independently verifiable outcome**. A task may
 - Keep stable task IDs; in OPTIMIZE mode, do not silently reassign IDs, change DONE tasks, or break existing references.
 
 ## Ownership and handoff
+
+Planning readiness (READY FOR SPECIFICATION) means the approved task boundary is clear enough to write a detailed specification; it does not mean the TASK is READY for coding-agent EXPLORE. Execution status remains project-owned. Each approved plan entry passes stable ID, deliverable, real dependencies, scope boundary, authoritative contract references, risk focus, and verification boundary to specification without a separate artifact.
 
 The human approves business/architecture decisions, risk acceptance, and plan changes. Planning agent may recommend alternatives with consequences. Task-specification skill owns detailed acceptance criteria, test scenarios, and per-task handoff; planning skill should give a clear verification boundary but not duplicate full specifications.
