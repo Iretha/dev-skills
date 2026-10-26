@@ -18,7 +18,7 @@ Read [planning-standard](references/planning-standard.md), [quality-gates](refer
 ## Modes
 
 - **CREATE:** Draft a new implementation plan from approved requirements, architecture, and verified project state.
-- **OPTIMIZE:** Assess an existing plan for unnecessary fragmentation, repeated context, artificial dependencies, duplicated work, unjustified MVP scope, and risk concentration. Propose a **minimal change set**; preserve accepted tasks, IDs, history, and stable references.
+- **OPTIMIZE:** Assess an existing plan for unnecessary fragmentation, repeated context, artificial dependencies, duplicated work, unjustified MVP scope, and risk concentration. Propose a **minimal change set** under Preserve Existing Investment: leave DONE tasks untouched; protect specified or started tasks and their IDs, specs, boundaries, dependencies, and decisions; optimize unspecced/unstarted tasks first. Material exceptions require explicit human approval.
 
 If the mode is not specified, choose CREATE when no plan exists; otherwise OPTIMIZE.
 
