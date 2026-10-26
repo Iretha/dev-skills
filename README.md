@@ -8,6 +8,18 @@ Reusable skills for AI-assisted software engineering.
 
 [`skill-registry.yaml`](skill-registry.yaml) is the machine-readable catalog of skill IDs, conversational aliases, SKILL.md paths, and named modes. It is intended for future consumers such as Agent Task Orchestrator. The registry does not install or automatically load skills; consumers must resolve paths and load the current SKILL.md explicitly. Keep registry entries aligned with the skill directories and YAML frontmatter. README.md remains the human-facing guide.
 
+## ChatGPT skill loading contract (Variant A)
+
+When the user invokes a documented skill alias (for example `/exec explore TASK-02-025`) or explicitly requests a skill:
+
+1. Fetch the current `skill-registry.yaml` from this repository's `main` branch. Do not resolve aliases from memory or this README alone.
+2. Match the requested alias or skill ID to **exactly one** registry entry; reject unknown or ambiguous names. Validate the requested named mode against that entry's `modes` list, if applicable.
+3. Fetch the referenced `SKILL.md` from the **same Git commit** as the registry, and check that its YAML frontmatter `name` equals the registry ID. If a consistent snapshot cannot be fetched, report the limitation and stop rather than silently substituting remembered instructions.
+4. Apply the loaded skill to the user's request, retaining all repository-specific instructions and human authorization gates. Reading a skill never authorizes repository changes.
+5. If GitHub or the required file is unavailable, or validation fails, **fail closed**: state which skill could not be loaded and ask whether to retry. Never claim a skill was followed when it was not loaded.
+
+This is a **behavioral contract for ChatGPT**, not an installed command dispatcher or a technical guarantee that a chat automatically reads this README. It must be included in the ChatGPT project's/custom instructions (or supplied in the conversation) to govern invocation. Avoid copying complete SKILL.md content into those instructions; point to this registry and loading contract.
+
 ## Quick start — ChatGPT shortcuts
 
 In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (or by the uppercase code without a slash). These are **documented conversational shortcuts, not registered ChatGPT slash commands**: they do not install or automatically load a skill. The assistant should resolve the alias to the linked `SKILL.md` and follow it; if the skill cannot be accessed, it should say so rather than claim it was applied.
