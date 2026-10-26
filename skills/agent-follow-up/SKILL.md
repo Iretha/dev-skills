@@ -3,7 +3,7 @@ name: agent-follow-up
 description: Write minimal decision-delta or instruction-delta follow-up messages for an agent continuing in the same conversation. Preserve existing context, phase, and human approval boundaries without repeating task specifications or prior findings.
 ---
 
-# Dev Agent Follow-Up
+# Agent Follow-Up
 
 ## Purpose
 
