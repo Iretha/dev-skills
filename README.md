@@ -4,6 +4,10 @@ Reusable skills for AI-assisted software engineering.
 
 **Principle: THE MODEL PROPOSES; THE HUMAN DECIDES.** The human owns business behavior, architecture, risk acceptance, plan approval, phase transitions, and final task acceptance.
 
+## Skill registry
+
+[`skill-registry.yaml`](skill-registry.yaml) is the machine-readable catalog of skill IDs, conversational aliases, SKILL.md paths, and named modes. It is intended for future consumers such as Agent Task Orchestrator. The registry does not install or automatically load skills; consumers must resolve paths and load the current SKILL.md explicitly. Keep registry entries aligned with the skill directories and YAML frontmatter. README.md remains the human-facing guide.
+
 ## Quick start — ChatGPT shortcuts
 
 In this ChatGPT workflow, you can **ask** for a skill by its slash-style alias (or by the uppercase code without a slash). These are **documented conversational shortcuts, not registered ChatGPT slash commands**: they do not install or automatically load a skill. The assistant should resolve the alias to the linked `SKILL.md` and follow it; if the skill cannot be accessed, it should say so rather than claim it was applied.
