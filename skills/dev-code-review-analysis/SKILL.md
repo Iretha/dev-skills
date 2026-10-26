@@ -32,7 +32,7 @@ If direct code access is unavailable, do not claim independent verification; lab
 
 - Prioritize Critical/High and material Medium issues; assess all consequential findings, without an arbitrary numeric cap or prolonged nit-hunting.
 - No automatic rejection of a finding because tests pass; no automatic acceptance because the reviewer claims a defect.
-- Do not reopen approved architecture for style or preference. Escalate concrete contract defects with options, consequences, and a recommendation.
+- Do not reopen approved architecture for style or preference. Escalate concrete contract defects. Establish finding validity and whether a human-owned decision is needed here; delegate comparison of engineering/architecture options to `dev-engineering-decision-support` rather than duplicating that analysis.
 - Do not turn this analysis into a second independent full code review. Inspect only evidence needed to adjudicate reported findings or a directly implicated risk.
 - Keep concise, auditable conclusions. One finding can be summarized in a few sentences when evidence is decisive.
 - Re-review after correction belongs to `dev-task-code-review-prompt`, not this skill.
